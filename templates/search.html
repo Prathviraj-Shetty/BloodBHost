@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Search{% endblock title %}
+{% block docstyle %}{% endblock docstyle %}
+{% block content %}
+
+<div class="frame idbox  position-absolute top-50 start-50 translate-middle px-5">
+    <div class="message text-center">{{msg}}</div>
+    <div class="py-5 text-center">
+        <form action="/search" method="post">
+            {% csrf_token %}
+            <b> Enter the Person Id : </b>
+            <input type="text" name="search" class="mt-2 text-center" required>
+            <button type="submit" class="mt-2">Go</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

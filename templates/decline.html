@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %} Decline {% endblock title %}
+
+{% block docstyle %}
+#cross-circle{
+width: 15vh;
+height: 15vh;
+}
+.topHalf {
+    background: -webkit-linear-gradient(45deg,black,red,black) !important;
+}
+{% endblock docstyle %}
+
+{% block stylesheet %}<link rel="stylesheet" href="./../static/success.css"> {% endblock stylesheet %}
+
+
+{% block content %}
+
+<div class="wrapperAlert position-absolute top-50 start-50 translate-middle mt-5">
+
+    <div class="Successframe">
+
+        <div class="topHalf">
+
+            <p><img src="../static/images/cross-circle.png" id="cross-circle"></p>
+            <h1>Denied</h1>
+
+
+            <ul class="bg-bubbles">
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+                <li class="rotatingeffect"></li>
+            </ul>
+        </div>
+
+        <div class="bottomHalf">
+
+            <p class="text-light">
+                {{msg}}
+            </p>
+            <button id="alert"><a href="/home" style="text-decoration: none; color:white;"> Go Back</a></button>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

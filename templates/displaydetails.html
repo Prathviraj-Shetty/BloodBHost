@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block title %} Details{% endblock title %}
+{% block docstyle %}
+
+table.scrolldown tbody, table.scrolldown thead {
+display: block;
+}
+
+table.scrolldown tbody {
+max-height: 150px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+tbody td,tbody th, thead th{
+width : 200px;
+
+}
+
+
+{% endblock docstyle %}
+{% block stylesheet %} {% endblock stylesheet %}
+
+
+{% block content %}
+<div class="detailscontainer position-relative mx-auto mt-5 p-0">
+    <table class="table table-light table-striped-columns">
+        <caption class="caption-top">Person Details</caption>
+        {% for i in obj1 %}
+
+        <tr>
+            <th>Pid</th>
+            <td>{{i.pid}}</td>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <pre> <td>{{i.fname}} {{i.lname}}</td></pre>
+        </tr>
+
+        <tr>
+            <th>DOB</th>
+            <td>{{i.dob}}</td>
+        </tr>
+
+
+        <tr>
+            <th>Phone</th>
+            <td>{{i.phone}}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{i.address}}</td>
+        </tr>
+        <tr>
+            <th>Blood Group</th>
+            <td>{{i.bgroup}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+    <div class="text-center">
+        {% for i in obj1 %}
+        <a href="/update/{{i.pid}}"><button class="btn btn-light fw-bold mx-2 my-2">Update Details</button></a>
+        <form action="/deleteperson" method="post" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" name="pid" value="{{i.pid}}" class="btn btn-light fw-bold mx-2 my-2">Delete Person</button>
+        </form>
+        {% endfor %}
+    </div>
+    <table border="i" class=" scrolldown table bg-light  table-striped-columns">
+        <caption class="caption-top">Donation Details</caption>
+        <thead>
+            <tr>
+                <th>Donation ID</th>
+                <th>Donation Date</th>
+                <th>Quantity</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for i in obj2 %}
+            <tr>
+                <td>{{i.did}}</td>
+                <td>{{i.ddate}}</td>
+                <td>{{i.dqty}}</td>
+            </tr>
+            {% endfor %}
+
+            <tr class="text-center">
+                {% for i in msg1 %}
+                <th>{{i}}</th>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="i" class="scrolldown table bg-light  table-striped-columns">
+        <caption class="caption-top">Recieved Details</caption>
+        <thead>
+            <tr>
+                <th>Receiver ID</th>
+                <th>Recieved Date</th>
+                <th>Quantity</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for i in obj3 %}
+            <tr>
+                <td>{{i.rid}}</td>
+                <td>{{i.rdate}}</td>
+                <td>{{i.rqty}}</td>
+            </tr>
+            {% endfor %}
+
+            <tr class="text-center">
+                {% for i in msg2 %}
+                <th>{{i}}</th>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    {% endblock content %}

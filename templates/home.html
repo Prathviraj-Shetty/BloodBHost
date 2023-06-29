@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="container w-100 " style="height:2vh;"></div>
+<main>
+    <div class="container carouselcontainer">
+        <div class="imgbg"><img src="../static/images/q5.jpg"  alt="..."></div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner " >
+                <div class="carousel-item active h-100 ">
+                    <img src="../static/images/q5.jpg" class="d-block w-100 h-100" alt="..." >
+                </div>
+                <div class="carousel-item h-100 ">
+                    <img src="../static/images/q1.jpg" class="d-block w-100 h-100" alt="..." >
+                </div>
+                <div class="carousel-item h-100 ">
+                    <img src="../static/images/q3.jpg" class="d-block w-100 h-100" alt="..." >
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="container bloodgrp">
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-4 colbox">
+                <svg class="bd-placeholder-img rounded-circle my-5" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <rect width="100%" height="100%" fill="#f01717"></rect><text x="40%" y="50%" fill="#21262b"
+                        dy=".3em" class="fs-1 fw-bolder">A</text>
+                </svg>
+            </div> 
+            <div class="col-12 col-sm-4 colbox">
+                <svg class="bd-placeholder-img rounded-circle my-5 " width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <rect width="100%" height="100%" fill="#f01717"></rect><text x="40%" y="50%" fill="#21262b"
+                        dy=".3em" class="fs-1 fw-bolder">B</text>
+                </svg>
+            </div> 
+            <div class="col-12 col-sm-4 colbox">
+                <svg class="bd-placeholder-img rounded-circle my-5" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                    preserveAspectRatio="xMidYMid slice" focusable="false">
+
+                    <rect width="100%" height="100%" fill="#f01717"></rect><text x="40%" y="50%" fill="#21262b"
+                        dy=".3em" class="fs-1 fw-bold">O</text>
+                </svg>
+            </div> 
+        </div> 
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6"> <img src="../static/images/blog1.jpg" class="w-75 h-75 m-5"></div>
+                    <div class="col-10 col-md-6 p-5">
+                        <title>Placeholder</title>
+                        <h1 class="fw-normal text-light">Blood groups</h1>
+                        <p class="text-secondary">There are 4 main blood groups (types of blood) – A, B, AB and O. Your blood group is determined by the genes you inherit from your parents.</p>
+                        <p><a class="btn btn-warning" href="https://www.nhs.uk/conditions/blood-groups/">View More »</a></p>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-md-6  text-end p-5" >
+                        <title>Placeholder</title>
+                        <h1 class="fw-normal text-light text-center">Blood Donation day</h1>
+                        <p class="text-secondary">World Blood Donor Day is celebrated on the 14 June every year. It is being distinguished to raise awareness about saving lives by blood donations.</p>
+                        <p><a class="btn btn-warning" href="https://www.paho.org/en/campaigns/world-blood-donor-day-14-june-2022">View More »</a></p>
+                    </div>
+                    <div class="col-12 col-md-6 "> <img src="../static/images/blog2.jpg" class="w-75 h-75 m-5"></div>
+                </div>
+            </div> 
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6"> <img src="../static/images/blog3.jpg" class="w-75 h-75 m-5"></div>
+                    <div class="col-10 col-md-6 p-5">
+                        <title>Placeholder</title>
+                        <h2 class="fw-normal text-light">Who Can Donate </h2>
+                        <p class="text-secondary">Most people can give blood if they are in good health. There are some basic requirements one need to fulfill in order to become a blood donor.</p>
+                        <p><a class="btn btn-warning" href="https://www.blood.co.uk/who-can-give-blood/">View More »</a></p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <footer class="container my-5">
+            <p class="text-center"><a href="#"><img src="../static/images/bloodlogo.png" alt=""
+                        style="width:60px;height:60px"></a></p>
+
+        </footer>
+</main>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock content %}

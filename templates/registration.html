@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block title %} Donate {% endblock title %}
+{% block docstyle %}{% endblock docstyle %}
+{% block stylesheet %}<link href="./../static/form.css" rel="stylesheet">{% endblock stylesheet %}
+
+{% block content %}
+
+<div class="top w-100 " style="height: 10vh;"></div>
+<main>
+  <div class="container formcontainer  text-light mb-5 ">
+    <div class="formheader color-light text-center p-3 fs-1 ">Registration Form</div>
+    <br>
+    <br>
+    <form method="post" action="/registration/{{role}}">
+      {% csrf_token %}
+      <b>Full Name:</b><br><br>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 mb-3">First Name : <input type="text" name="fname" required></div>
+        <div class="col-sm-12 col-md-6 col-lg-6 mb-3">Last Name : <input type="text" name="lname"></div>
+      </div>
+      <hr>
+
+      <b>Blood Group : </b>
+      <br><br>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="A+ve" value="A+ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              A+ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="A-ve" value="A-ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              A-ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="B+ve" value="B+ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              B+ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="B-ve" value="B-ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              B-ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="O+ve" value="O+ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              O+ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="O-ve" value="O-ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              O-ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="AB+ve" value="AB+ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              AB+ve
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="bloodgroup" id="AB-ve" value="AB-ve">
+            <label class="form-check-label" for="flexRadioDefault1">
+              AB-ve
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <hr>
+      <div class="text-center">
+        <b>Date Of Birth : </b> <input type="date" name="dob" required>
+      </div>
+      <br>
+      <hr>
+      <b>Gender : </b><br><br>
+      <div class="row justify-content-center">
+        <div class="col-5 ms-3">
+          <input type="checkbox" name="gender" id="male" value="Male">Male
+        </div>
+        <div class="col-6">
+          <input type="checkbox" name="gender" id="female" value="Female">Female
+        </div>
+      </div>
+      <br>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-8 col-md-6 col-lg-4 my-3 ">
+          <b>Age : </b>
+          <input type="number" name="age" required>
+        </div>
+        <div class="col-8 col-md-6 col-lg-4 my-3 ">
+          <b>Phone No : </b>
+          <input type="phone" name="phone" required>
+        </div>
+        <div class="col-8 col-md-6 col-lg-4 my-3 ">
+          <b>Address : </b>
+          <input type="text" name="address" required>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="text-center w-100">
+        <b>Medical Issue/ Reason(s):</b><br>
+        <textarea name="med" id="medicalissue"  rows="3"></textarea>
+      </div>
+      <br>
+      <br>
+      <div class="text-center">
+        <button type="submit " class="btn btn-light">Submit</button>
+      </div>
+      <br>
+      <br>
+
+
+    </form>
+
+  </div>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Receive{% endblock title %}
+{% block docstyle %}
+
+{% endblock docstyle %}
+{% block stylesheet %}<link href="./../static/pid.css" rel="stylesheet">{% endblock stylesheet %}
+{% block content %}
+
+<div class="container w-100 " style="height: 5vh;"></div>
+<div class="frame position-absolute top-50 start-50 translate-middle px-5 bg-danger text-center">
+    <!-- <div class="message text-center">{{msg1}}</div> -->
+    <div class="py-2 ">
+        <form method="post" action="/receive">
+            {% csrf_token %}
+            <div class="m-3">
+                <b>Your Id : </b><br>
+                <input type="text" value="{{pid}}" name="pid" class="border border-2 border-dark rounded-1 text-center" readonly>
+            </div>
+            <div class="m-3">
+                <b>Blood Group</b> : </b><br>
+                <input type="text" value="{{bgroup}}" name="rbgroup" class="border border-2 border-dark rounded-1 text-center" readonly>
+            </div>
+            <div class="m-3">
+                <b>Enter the Quantity of Blood Required (in mL) : </b><br>
+                <input type="number" name="rqty" id="rqty" class="border border-2 border-dark rounded-1 text-center" required>
+            </div>
+            <div class="m-3">
+                <b>Enter the hospital name: </b><br>
+                <input type="text" name="hospital_name" class="border border-2 border-dark rounded-1 text-center" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit "class="btn btn-dark text-light fw-bold">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Donation{% endblock title %}
+{% block docstyle %}b{text-shadow: 2px 2px 4px #000000;}{% endblock docstyle %}
+{% block stylesheet %}<link href="../static/pid1.css" rel="stylesheet">{% endblock stylesheet %}
+{% block content %}
+
+
+<div class="container w-100 " style="height: 5vh;"></div>
+<div class="frame position-absolute top-50 start-50 translate-middle px-5 bg-danger text-center">
+    <div class="message text-center">{{msg1}}</div>
+    <div class="py-5">
+        <form method="post" action="/donate">
+            {% csrf_token %}
+            <div class="m-3">
+                <b>Your Id : </b><br>
+                <input type="text" value="{{pid}}" name="pid" class="border border-dark border-2 my-2" readonly><br>
+                <i style="font-size:12px; color:yellow;""><b>NOTE:Remember your id for future access</b></i>
+            </div>
+            <div class="m-3">
+                <b>Enter the Quantity(50mL scale) : </b><br>
+                0 <input type="range" name="dqty" min="0" step="50" max="350" class="mt-3" > 350
+            </div>
+            <button type="submit">Go</button>
+
+        </form>
+    </div>
+
+</div>
+{% endblock content %}

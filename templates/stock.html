@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Stock{% endblock title %}
+{% block docstyle %}{% endblock docstyle %}
+{% block stylesheet %}
+<link href="./../static/stock.css" rel="stylesheet">{% endblock stylesheet %}
+{% block content %}
+
+<!-- <div class="container w-100 " style="height: vh;"></div> -->
+<div class="container stockcontainer position-absolute top-50 start-50 text-center ">
+    <div class="row justify-content-center">
+        {% for i in obj %}
+        <div class="col-md-4 col-lg-3 col-10 col-sm-6 m-0 py-4">
+            <div class="stockbox w-100">
+                <div class="tophalf w-100 ">
+                    <div class=" bloodg  mb-2"> <b>{{i.sbgroup}}</b></div>
+                    <b>{{i.qty}} mL</b><br>
+                </div>
+                <div class="bottomhalf w-100 h-100"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

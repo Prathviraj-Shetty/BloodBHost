@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Pid{% endblock title %}
+{% block docstyle %}{% endblock docstyle %}
+{% block content %}
+
+
+<div class="frame idbox position-absolute top-50 start-50 translate-middle px-5">
+    <div class="message text-center">{{msg1}}</div>
+    <div class="py-5 text-center">
+        <form method="post" action="/Pid/{{role}}">
+            {% csrf_token %}
+            <b>Enter your Id : </b>
+            <input type="number" name="pid" class="mt-2 text-center" required>
+            <button type="submit" class=" mt-2">Go</button>
+        </form>
+    </div>
+    <div class="foot text-center">
+        Not Already Enrolled ? <a href="/registration/{{role}}" class="ms-2 fw-semibold shadow">Enroll</a>
+        <br><br>
+    </div>
+</div>
+{% endblock content %}

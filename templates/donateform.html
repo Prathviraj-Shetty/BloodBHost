@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %} Donate {% endblock title %}
+{% block docstyle %}{% endblock docstyle %}
+{% block stylesheet %}<link href="./../static/form.css" rel="stylesheet">{% endblock stylesheet %}
+{% block content %}
+
+<div class="top w-100 " style="height: 10vh;"></div>
+<main>
+  <div class="container formcontainer text-light mb-5 ">
+    <div class="formheader color-light text-center p-3 fs-1 ">Blood donation Form</div>
+    <br>
+    <br>
+    <form method="post" action="/donateform">
+      {% csrf_token %}
+      <div class="m-3 fs-5 text-center">
+        <b>Your Id : </b><br>
+        <input type="text" value="{{pid}}" class="text-center" name="pid" readonly>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 col-md-6  my-3 ">
+            <pre>Present Age    : </b><input type="number" name="age" value={{age}} readonly></div></pre>
+        <div class="col-12 col-sm-8 col-md-6  my-3 ">
+          <pre>Weight(kg)     : </b><input type="text" name="weight" required></div></pre>
+          <div class="col-12 col-sm-8 col-md-6  my-3 ">
+            <pre>Pulse(/min)    : </b><input type="text" name="pulse" required></div></pre>
+            <div class="col-12 col-sm-8 col-md-6  my-3 ">
+              <pre>Hb(g/DI)       : </b><input type="text" name="hb" required></div></pre>
+                <div class="col-12 col-sm-8 col-md-6  my-3 ">
+                  <pre>BP(Diastolic)  : </b><input type="text" name="bpd" required></div></pre>
+                  <div class="col-12 col-sm-8 col-md-6  my-3 ">
+                    <pre>BP(Systolic)   : </b><input type="text" name="bps" required></div></pre>
+                    <div class="col-12 col-sm-8 col-md-6 my-3 "><pre>Temparature(<sup>o</sup>C): </b><input type="text" name="temp" required></pre>
+                </div>
+              </div>
+              <br>
+              <hr>
+              <br>
+
+              <div class="text-center my-5">
+                <select id="condition" name="condition" class="w-100">
+                  <option class="w-50" value="0">Conditions!!!</option>
+                  <option class="w-50" value="1">Past one year - has been treated for Rabies or received Hepatitis B immune globulin
+                  </option>
+                  <option class="w-50" value="2">Past six months - had a tattoo, ear or skin piercing or acupuncture, received blood
+                    or blood products</option>
+                  <option class="w-50" value="3">Past six months - suffered from serious illness or major surgery, had contact with a person with hepatitis or yellow jaundice</option>
+                  <option class="w-50" value="4">Past three months - donated blood or been treated for Malaria</option>
+                  <option class="w-50" value="5">Past one month - had any immunizations</option>
+                  <option class="w-50" value="6"> Past 48 hours - taken any antibiotics or any other medications (Allopathic or
+                    Ayurveda or Sidha or Homeo)</option>
+                  <option class="w-50" value="7">Past 24 hours - taken alcoholic beverages</option>
+                  <option class="w-50" value="8">Past 72 hours - had dental work or taken Aspirin</option>
+                  <option class="w-50" value="9">Present - suffering from cough, influenza or sore throat, common cold</option>
+                  <option class="w-50" value="10">Women -who is pregnant,breast feeding her child or undergoing menstrual cycle</option>
+                  <option class="w-50" value="11">Has Diabetes, suffering from chest pain, heart disease or high BP,
+                    cancer, blood clotting problem or blood disease</option>
+                  <option class="w-50" value="12">Suffering from unexplained fever, weight loss, fatigue, night
+                    sweats, enlarged lymph nodes in armpits, neck or groin, white patches in the mouth etc</option>
+                  <option class="w-50" value="13">Ever had TB, bronchial asthma or allergic disorder, liver disease, kidney disease,
+                    fits or fainting, blue or purple spots on the skin or mucous membranes etc</option>
+                  <option class="w-50" value="14">None of the above</option>
+                </select>
+              </div>
+              <br>
+              <hr>
+              <br>
+              <div class="text-center w-100">
+                <b>Medical Issues :</b><br>
+                <textarea name="med" id="medicalissue" cols="50" rows="3" placeholder="Enter NO if no health issues"></textarea>
+              </div>
+              <br>
+              <br>
+              <div class="text-center">
+                <button type="submit "class="btn btn-light">Submit</button>
+              </div>
+              <br>
+              <br>
+
+
+    </form>
+
+  </div>
+</main>
+
+{% endblock content %}

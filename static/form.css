@@ -1,0 +1,40 @@
+.container {
+    background-color: rgb(0,0,0);
+    border:1px solid white;
+    border-radius:22px;
+    }
+    
+    .formheader {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 1px solid white;
+    border-radius:100px 100px 0px 0px;
+    background: linear-gradient(90deg,black,rgb(240, 11, 11),black);
+    }
+    #medical-issue{
+    width:50vw;
+    }
+    input{
+    background-color: rgb(0,0,0);
+    color:white;
+    border-radius:12px;
+    text-align: center;
+    
+    }
+    textarea{
+    background-color: rgb(0,0,0);
+    color:white;
+    border-radius:12px;
+    resize:none;
+    width: 50%;
+    }
+    select{
+    background-color: rgb(0,0,0);
+    color:white;
+    border-radius:12px;
+    }
+
+    @media screen and (max-width:524px) {
+        textarea{
+            width: 90%;
+        }
+    }
