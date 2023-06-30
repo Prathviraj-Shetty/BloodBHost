@@ -1,45 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} Donate {% endblock title %}
-{% block docstyle %}
-.container {
-background-color: rgb(0,0,0);
-border:1px solid white;
-border-radius:22px;
-}
-
-.formheader {
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-border-bottom: 1px solid white;
-border-radius:100px 100px 0px 0px;
-background: linear-gradient(90deg,black,rgb(240, 11, 11),black);
-}
-#medical-issue{
-width:50vw;
-}
-input{
-background-color: rgb(0,0,0);
-color:white;
-border-radius:12px;
-
-}
-textarea{
-background-color: rgb(0,0,0);
-color:white;
-border-radius:12px;
-}
-select{
-background-color: rgb(0,0,0);
-color:white;
-border-radius:12px;
-}
-{% endblock docstyle %}
-{% block stylesheet %}
-<link href="../static/donate.css" rel="stylesheet">{% endblock stylesheet %}
+{% block docstyle %}{% endblock docstyle %}
+{% block stylesheet %}<link href="../static/form.css" rel="stylesheet">{% endblock stylesheet %}
 {% block content %}
 
 <div class="top w-100 " style="height: 10vh;"></div>
 <main>
-  <div class="container w-sm-100 text-light mb-5 ">
+  <div class="container formcontainer  text-light mb-5 ">
     <div class="formheader color-light text-center p-3 fs-1 ">Update Details</div>
     <br>
     <br>
