@@ -10,18 +10,20 @@ from datetime import datetime ,date
 from django.utils import timezone
 
 # Create your views here.
+
+@login_required
 def home(request):
     return render(request,'home.html')
-def table(request):
-    return render(request,'table.html')
 
+@login_required
 def success(request):
     return render(request,'success.html')
+
+@login_required
 def decline(request):
     return render(request,'decline.html')
-def displaydetails(request):
-    return render(request,'displaydetails.html')
 
+@login_required
 def Pid(request,role):
 	if request.method=="POST" :
 		cond1=request.POST.get('pid')
@@ -53,6 +55,7 @@ def Pid(request,role):
 	return render(request,'Pid.html',{"role":role})
 
 		
+@login_required
 def donate(request):
 	if request.method=="POST" :
 		# did=len(DONATION.objects.all())+1
@@ -76,6 +79,7 @@ def donate(request):
 		# print(params)
 	return render(request,'success.html',params)
 
+@login_required
 def registration(request,role):
 	if request.method=="POST" :
 		fname = request.POST.get('fname')
@@ -111,6 +115,7 @@ def registration(request,role):
 		
 	return render(request,'registration.html',{"role":role})
 
+@login_required
 def donateform(request):
 	if request.method=="POST" :
 		pid = request.POST.get('pid')
@@ -143,6 +148,7 @@ def donateform(request):
 			
 	return render(request,'donateform.html')
 
+@login_required
 def receiveform(request):
 
 		if request.method=="POST" :
@@ -168,6 +174,7 @@ def receiveform(request):
 		
 		
 
+@login_required
 def receive(request):
 	
 	if request.method=="POST" :
@@ -206,6 +213,7 @@ def receive(request):
 		return render(request,'success.html',params)
 	
 	
+@login_required
 def stock(request):
 	qty=STOCK.objects.all();
 	params={
@@ -213,6 +221,7 @@ def stock(request):
 	}
 	return render(request,'stock.html',params)
 
+@login_required
 def search(request):
 	if request.method == 'POST':
 		search=request.POST.get("search")
@@ -272,9 +281,11 @@ def search(request):
 			return render(request,'displaydetails.html',params)
 	return render(request,'search.html')
 
+@login_required
 def displaydetails(request):
 	return render(request,'displaydetails.html')
 
+@login_required
 def updatedetails(request,id):
 	if request.method=="POST" :
 		fname = request.POST.get('fname')
@@ -293,6 +304,7 @@ def updatedetails(request,id):
 	context={"obj":PERSON.objects.filter(pid=id)}
 	return render(request,'updatedetails.html',context)
 
+@login_required
 def deleteperson(request):
 	if request.method == "POST":
 		delpid=request.POST.get("pid")
@@ -302,6 +314,7 @@ def deleteperson(request):
 			'msg2':"Person ID = "+str(delpid)
 		}
 		return render(request,'success.html',params)
+
 
 def registerUser(request):
 
@@ -322,6 +335,7 @@ def registerUser(request):
 		context = {'form':form}
 		return render(request, 'register.html', context)
 
+
 def loginUser(request):
 	if request.user.is_authenticated:
 		return redirect('/home')
@@ -340,6 +354,7 @@ def loginUser(request):
 
 		
 		return render(request, 'login.html')
+
 
 def logoutUser(request):
 	logout(request)

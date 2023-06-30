@@ -28,7 +28,6 @@ urlpatterns = [
     path('decline',views.decline,name='decline'),
     path('donateform',views.donateform,name='donateform'),
     path('donate',views.donate,name='donate'),
-    # path('PidR',views.PidR,name='PidR'),
     path('receive',views.receive,name='receive'),
     path('search',views.search,name='search'),
     path('displaydetails',views.displaydetails,name='displaydetails'),
@@ -37,7 +36,6 @@ urlpatterns = [
     path('stock',views.stock,name='stock'),
     path('login',views.loginUser,name='login'),
     path('register',views.registerUser,name='register'),
-    path('logout',views.logoutUser,name='logout'),
-    path('table',views.table,name='table'),
+    path('logout/',views.logoutUser,name='logout')
 
 ]

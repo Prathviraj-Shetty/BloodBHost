@@ -71,7 +71,7 @@ body {
   width: 50%;
 }
 .stockcontainer{
-  transform: translate(-50%,-40%);
+  margin-top:8% ;
 }
 
 
@@ -91,9 +91,9 @@ body {
 }
 @media screen and (max-width:567px) {
 
-  .stockcontainer{
-    transform: translate(-50%,-15%)!important;
-  }
+  /* .stockcontainer{
+    margin-top:3% ;
+  } */
 }
 
 
@@ -123,9 +123,9 @@ body {
   .formcontainer{
     width: 90% !important;
   }
-  .stockcontainer{
-    transform: translate(-50%,-32%);
-  }
+  /* .stockcontainer{
+    margin-top:5% ;
+  } */
 }
 @media screen and (min-width: 768px) and (max-width:1000px) {
   .nav-item {
@@ -155,7 +155,7 @@ body {
 .imgbg{
   display: none;
   width: 100%;
-  height: 87vh;
+  height: 60vh;
  
 }
 
