@@ -37,6 +37,11 @@ html {
     background: #261c1c6e !important;
     color: white !important;
 }
+.login_btn:hover {
+    width: 100%;
+    background: #0000006e !important;
+    color: white !important;
+}
 
 .login_btn:focus {
     box-shadow: none !important;

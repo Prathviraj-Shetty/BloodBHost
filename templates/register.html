@@ -20,7 +20,7 @@
 
 					<form method="POST" action="">
 						{% csrf_token %%}
-						<div class="input-group mb-3">
+						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
@@ -51,6 +51,10 @@
 					</form>
 				</div>
 		
+				{% for message in messages %}
+					<p id="messages">{{message}}</p>
+				{% endfor %}	
+				
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links text-light">
 						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>

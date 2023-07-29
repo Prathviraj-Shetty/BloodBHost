@@ -179,10 +179,8 @@ def receive(request):
 	
 	if request.method=="POST" :
 		pid=request.POST.get('pid')
-		# rid=len(RECEIVE.objects.all())+1
 		rqty = request.POST.get('rqty')
 		hospital_name=request.POST.get('hospital_name')
-		# print(hospital_name)
 		rbgroup=request.POST.get('rbgroup')
 
 		quantity=STOCK.objects.get(sbgroup=PERSON.objects.get(pid=pid).bgroup).qty
@@ -200,7 +198,6 @@ def receive(request):
 		receive=receives(pid=pidd,rid=ridd)
 		receive.save();
 		
-		# quantity=STOCK.objects.get(sbgroup=PERSON.objects.get(pid=pid).bgroup).qty
 		STOCK.objects.filter(sbgroup=PERSON.objects.get(pid=pid).bgroup).update(qty=quantity-int(rqty))
 
 		rids=RECEIVE.objects.filter(rid=rid)
@@ -315,6 +312,14 @@ def deleteperson(request):
 		}
 		return render(request,'success.html',params)
 
+def clean_username(self):
+        username = self.cleaned_data["username"]
+        try:
+            User.objects.get(username=username)
+        except User.DoesNotExist:
+            return username
+        raise forms.ValidationError(_("A user with that username already exists."))
+
 
 def registerUser(request):
 
@@ -323,15 +328,24 @@ def registerUser(request):
 	else:
 		form = CreateUserForm()
 		if request.method == 'POST':
-			form = CreateUserForm(request.POST)
-			if form.is_valid():
-				form.save()
-				user = form.cleaned_data.get('username')
-				messages.success(request, 'Account Created for ' + user)
-
-				return redirect('/login')
+			if(User.objects.filter(username=request.POST.get('username')).exists())	:
+				messages.info(request, 'Username Already Exists')
+				return redirect('/register')
 			
-
+			pass1=request.POST.get('password1')
+			pass2=request.POST.get('password2')
+			if (pass1!=pass2):
+				messages.success(request, 'Password doesn`t match')
+			else:
+				form = CreateUserForm(request.POST)
+				if form.is_valid():
+					form.save()
+					user = form.cleaned_data.get('username')
+					messages.success(request, 'Account Created for ' + user)
+					return redirect('/login')
+				else:
+					messages.info(request, 'Enter a strong password')
+				
 		context = {'form':form}
 		return render(request, 'register.html', context)
 
@@ -352,7 +366,6 @@ def loginUser(request):
 			else:
 				messages.info(request, 'Username OR password is incorrect')
 
-		
 		return render(request, 'login.html')
 
 
