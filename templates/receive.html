@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Receive{% endblock title %}
-{% block docstyle %}
-
-{% endblock docstyle %}
-{% block stylesheet %}<link href="./../static/pid.css" rel="stylesheet">{% endblock stylesheet %}
+{% block docstyle %}{% endblock docstyle %}
 {% block content %}
 
 <div class="container w-100 " style="height: 5vh;"></div>
-<div class="frame position-absolute top-50 start-50 translate-middle px-5 bg-danger text-center">
-    <!-- <div class="message text-center">{{msg1}}</div> -->
+<div class="frame idbox position-absolute top-50 start-50 translate-middle px-5  text-center">
+     {% comment %} <div class="message text-center">{{msg1}}</div>  {% endcomment %}
     <div class="py-2 ">
         <form method="post" action="/receive">
             {% csrf_token %}
